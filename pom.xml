@@ -15,7 +15,12 @@
 	<description>My Application</description>
 	<properties>
 		<java.version>17</java.version>
+		<sonar.projectKey>springbootapplication</sonar.projectKey>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+		<sonar.token>sqa_812210036546319e0a12cdf93f7e2eb65fd91f6e</sonar.token> <!-- Or sonar.login + sonar.password -->
 	</properties>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -75,25 +80,31 @@
 					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
+			<!-- SonarQube plugin -->
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.7.0.1746</version>
+			</plugin>
 
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>jaxb2-maven-plugin</artifactId>
-						<version>1.6</version>
-						<executions>
-							<execution>
-								<id>xjc</id>
-								<goals>
-									<goal>xjc</goal>
-								</goals>
-							</execution>
-						</executions>
-						<configuration>
-							<schemaDirectory>${project.basedir}/src/main/resources/xsdFiles/</schemaDirectory>
-							<outputDirectory>${project.basedir}/src/main/java/com/school/Redis/XsdOutput/</outputDirectory>
-							<clearOutputDir>false</clearOutputDir>
-						</configuration>
-					</plugin>
+<!--					<plugin>-->
+<!--						<groupId>org.codehaus.mojo</groupId>-->
+<!--						<artifactId>jaxb2-maven-plugin</artifactId>-->
+<!--						<version>1.6</version>-->
+<!--						<executions>-->
+<!--							<execution>-->
+<!--								<id>xjc</id>-->
+<!--								<goals>-->
+<!--									<goal>xjc</goal>-->
+<!--								</goals>-->
+<!--							</execution>-->
+<!--						</executions>-->
+<!--						<configuration>-->
+<!--							<schemaDirectory>${project.basedir}/src/main/resources/xsdFiles/</schemaDirectory>-->
+<!--							<outputDirectory>${project.basedir}/src/main/java/com/school/Redis/XsdOutput/</outputDirectory>-->
+<!--							<clearOutputDir>false</clearOutputDir>-->
+<!--						</configuration>-->
+<!--					</plugin>-->
 
 		</plugins>
 	</build>

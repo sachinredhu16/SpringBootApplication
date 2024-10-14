@@ -1,0 +1,17 @@
+1. Add below plugin
+    <plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.7.0.1746</version>
+    </plugin>
+
+2. Add authencation config into pom.xml
+    <properties>
+            <sonar.projectKey>springbootapplication</sonar.projectKey> // application name
+            <sonar.host.url>http://localhost:9000</sonar.host.url> // sonarqube url
+            <sonar.token>sqa_812210036546319e0a12cdf93f7e2eb65fd91f6e</sonar.token> // Go to My Account > Security > Tokens
+    </properties>
+
+3. Execute below to command to build project with sonar
+    mvn clean install sonar:sonar
+
